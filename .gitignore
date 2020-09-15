@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/out/build
+/compile_commands.json
+/clang_rename/compile_commands.json
