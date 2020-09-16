@@ -83,3 +83,14 @@ jobs:
         shell: 'bash'
         run: >
           $VCPKG_ROOT/vcpkg install sqlite3 cpprestsdk --triplet ${{ matrix.triplet }}
+
+      - name: 'Run CMake with Ninja'
+        uses: lukka/run-cmake@v3
+          useVcpkgToolchainFile: true
+        #buildDirectory: '${{ runner.workspace }}/b//unixmakefiles'
+          
+        # Or build multiple configurations out of a CMakeSettings.json file created with Visual Studio.
+          cmakeListsOrSettingsJson: CMakeSettingsJson
+          cmakeSettingsJsonPath: '${{ github.workspace }}/CMakeSettings.json'
+          configurationRegexFilter: '${{ matrix.configuration }}'
+
