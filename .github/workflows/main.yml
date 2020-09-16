@@ -1,7 +1,3 @@
-
-    
-
-
 name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
@@ -17,7 +13,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     env:
-      VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
+      VCPKG_BINARY_SOURCES: 'clear;nuget,https://nuget.pkg.github.com/jiayuehua/index.json,readwrite'
 
 
 
