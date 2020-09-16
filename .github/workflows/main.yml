@@ -29,10 +29,13 @@ jobs:
           - os: 'windows-2019'
             triplet: 'x64-windows'
             mono: ''
+            vstriplet: 'x64-Debug'
           - os: 'ubuntu-20.04'
             triplet: 'x64-linux'
             # To run `nuget.exe` on non-Windows platforms, we must use `mono`.
             mono: 'mono'
+            vstriplet: 'WSL-Clang-Debug'
+            
 
       
     #The type of runner that the job will run on
@@ -93,5 +96,5 @@ jobs:
         # Or build multiple configurations out of a CMakeSettings.json file created with Visual Studio.
           cmakeListsOrSettingsJson: CMakeSettingsJson
           cmakeSettingsJsonPath: '${{ github.workspace }}/CMakeSettings.json'
-          configurationRegexFilter: '${{ matrix.configuration }}'
+          configurationRegexFilter: '${{ matrix.vstriplet }}'
 
