@@ -23,18 +23,32 @@ jobs:
 
     strategy:
       matrix:
-        os: ['windows-2019', 'ubuntu-20.04']
+        
+        vstriplet: ['x64-Debug','WSL-Clang-Debug','WSL-GCC-Debug']
+                
 
         include:
           - os: 'windows-2019'
             triplet: 'x64-windows'
             mono: ''
             vstriplet: 'x64-Debug'
+            
+        
           - os: 'ubuntu-20.04'
             triplet: 'x64-linux'
             # To run `nuget.exe` on non-Windows platforms, we must use `mono`.
             mono: 'mono'
             vstriplet: 'WSL-Clang-Debug'
+            
+      
+          - os: 'ubuntu-20.04'
+            triplet: 'x64-linux'
+            # To run `nuget.exe` on non-Windows platforms, we must use `mono`.
+            mono: 'mono'
+            vstriplet: 'WSL-GCC-Debug'  
+            
+            
+            
             
 
       
