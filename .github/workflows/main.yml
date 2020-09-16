@@ -30,7 +30,7 @@ jobs:
             triplet: 'x64-windows'
             mono: ''
           - os: 'ubuntu-20.04'
-            triplet: 'WSL-Clang-Debug'
+            triplet: 'x64-linux'
             # To run `nuget.exe` on non-Windows platforms, we must use `mono`.
             mono: 'mono'
 
