@@ -23,13 +23,15 @@ jobs:
 
     strategy:
       matrix:
-        os: ['windows-2019']
-        vstriplet: ['x64-Debug']
-        triplet: ['x64-windows']
-        mono: ''
+        
+        vstriplet: ['x64-Debug','WSL-Clang-Debug','WSL-GCC-Debug']
+                
 
         include:
-
+          - os: 'windows-2019'
+            triplet: 'x64-windows'
+            mono: ''
+            vstriplet: 'x64-Debug'
             
         
           - os: 'ubuntu-20.04'
